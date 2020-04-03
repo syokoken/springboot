@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+</head>
+<body>
+<!--/*@thymesVar id="message" type="java.lang.String"*/-->
+<h1  th:text="${message}">Hello World!</h1>
+
+
+<h2 th:text="|${message}hh|">x</h2>
+
+<!--/*@thymesVar id="flag" type="java.lang.String"*/-->
+<span th:if="${flag == 'true'}" th:text="${flag}">true</span>
+<a th:unless="${flag eq 'false'}" th:href="@{http://www.baidu.com}">百度</a>
+
+<a th:href="@{http://www.ityouknow.com/{type}(type=${type})}">link1</a>
+<a th:href="@{http://www.ityouknow.com/{pageId}/can-use-springcloud.html(pageId=${pageId})}">view</a>
+
+<tr th:each="user:${list}">
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.age}"></td>
+    <td th:text="${user.pass}"></td>
+</tr>
+
+<div th:inline="text">
+    <p>[[${flag}]]</p>
+</div>
+
+<p th:text="${#strings.length(message)}"></p>
+</body>
+</html>
