@@ -5,6 +5,7 @@ import com.example.demo.repository.MessageRepository;
 import com.example.demo.swagger.BaseResult;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class MessageController {
     @ApiOperation(
             value = "消息列表",
             notes = "完整的消息内容列表",
-            produces="application/json, application/xml",
-            consumes="application/json, application/xml",
+            produces= MediaType.APPLICATION_JSON_UTF8_VALUE,
+            consumes="application/json, application/xml, charset=UTF-8",
             response = List.class)
     @GetMapping(value = "messages")
     public List<Message> getAll(){
@@ -61,13 +62,13 @@ public class MessageController {
         messageRepository.deleteMessage(id);
     }
 
-    @PatchMapping(value = "message/text")
+    @PatchMapping(value = "message/text", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
     public BaseResult<Message> updateText(Message message){
         Message msg = messageRepository.updateText(message);
         return BaseResult.successWithData(msg);
     }
 
-    @GetMapping(value = "messageTest")
+    @GetMapping(value = "messageTest", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Message test(Message message){
         Message msg = new Message();
         msg.setId(1L);

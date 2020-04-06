@@ -20,7 +20,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                // 自行修改为自己的包路径
+                // 修改为包路径
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.web"))
                 .paths(PathSelectors.any())
                 .build();
