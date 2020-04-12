@@ -18,10 +18,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 
-
-
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class MessageControllerTest {
     @Autowired
     private WebApplicationContext wac;
