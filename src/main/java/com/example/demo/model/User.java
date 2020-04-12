@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 public class User {
+    private Long id;
     @NotEmpty(message="姓名不能为空")
     private String name;
     @Max(value = 100, message = "年龄不能大于100岁")

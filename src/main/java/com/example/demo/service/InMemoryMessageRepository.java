@@ -1,6 +1,7 @@
-package com.example.demo.repository;
+package com.example.demo.service;
 
 import com.example.demo.model.Message;
+import com.example.demo.repository.MessageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service("messageRepository")
-public class InMemoryMessageRepository implements MessageRepository{
+public class InMemoryMessageRepository implements MessageRepository {
 
     private static AtomicLong counter = new AtomicLong();
     private final ConcurrentMap<Long, Message> messages = new ConcurrentHashMap<>();

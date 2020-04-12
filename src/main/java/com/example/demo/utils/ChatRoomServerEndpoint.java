@@ -2,7 +2,6 @@ package com.example.demo.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,12 +15,6 @@ import static com.example.demo.utils.WebSocketUtils.LIVING_SESSIONS_CACHE;
 import static com.example.demo.utils.WebSocketUtils.sendMessage;
 import static com.example.demo.utils.WebSocketUtils.sendMessageAll;
 
-/**
- * 聊天室
- *
- * @author Levin
- * @since 2018/6/26 0026
- */
 @RestController
 @ServerEndpoint("/chat-room/{username}")
 public class ChatRoomServerEndpoint {
@@ -67,8 +60,14 @@ public class ChatRoomServerEndpoint {
 
 
     @GetMapping("/chat-room/{sender}/to/{receive}")
-    public void onMessage(@PathVariable("sender") String sender, @PathVariable("receive") String receive, String message) {
-        sendMessage(LIVING_SESSIONS_CACHE.get(receive), "[" + sender + "]" + "-> [" + receive + "] : " + message);
+    public void onMessage(
+            @PathVariable("sender") String sender,
+            @PathVariable("receive") String receive,
+            String message) {
+        sendMessage(
+                LIVING_SESSIONS_CACHE.get(receive),
+                "[" + sender + "]" + "-> [" + receive + "] : " + message
+        );
     }
 
 }
