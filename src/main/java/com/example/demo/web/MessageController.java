@@ -1,6 +1,6 @@
 package com.example.demo.web;
 
-import com.example.demo.model.Message;
+import com.example.demo.entity.Message;
 import com.example.demo.repository.MessageRepository;
 import com.example.demo.swagger.BaseResult;
 import io.swagger.annotations.*;

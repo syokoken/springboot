@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class PropertiesTest {
     @Value("${neo.title}")
     private String title;

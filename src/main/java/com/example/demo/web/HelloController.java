@@ -1,7 +1,6 @@
 package com.example.demo.web;
 
-import com.example.demo.model.User;
-import org.springframework.ui.ModelMap;
+import com.example.demo.entity.User;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;

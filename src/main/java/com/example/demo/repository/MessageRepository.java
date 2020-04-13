@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.Message;
+import com.example.demo.entity.Message;
 
 import java.util.List;
 

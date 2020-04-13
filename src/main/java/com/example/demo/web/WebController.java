@@ -1,6 +1,6 @@
 package com.example.demo.web;
 
-import com.example.demo.model.User;
+import com.example.demo.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

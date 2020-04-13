@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.User;
+import com.example.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
+@Repository
 public class UserRepositoryImpl implements UserRepository{
 
     @Autowired

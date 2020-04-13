@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
-@SpringBootTest
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class HelloTest {
 
     private MockMvc mockMvc;
