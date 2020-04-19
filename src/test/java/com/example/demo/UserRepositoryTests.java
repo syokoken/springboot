@@ -1,19 +1,22 @@
 package com.example.demo;
 
-import com.example.demo.entity.User;
+import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UserRepositoryTests {
     @Autowired
+    @Qualifier("userRepositoryImpl")
     private UserRepository userRepository;
 
     @Test
@@ -29,14 +32,14 @@ public class UserRepositoryTests {
         userRepository.update(user);
     }
 
-    @Test
+    //@Test
     public void testDelete() {
         userRepository.delete(1L);
     }
 
     @Test
-    public void testQueryOne()  {
-        User user=userRepository.findById(1L);
+    public void testQueryOne() {
+        User user=userRepository.findById(2L);
         System.out.println("user == "+user.toString());
     }
 

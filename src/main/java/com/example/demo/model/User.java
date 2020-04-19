@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -18,6 +18,8 @@ public class User {
     @NotEmpty(message="密码不能为空")
     @Length(min=6,message="密码长度不能小于6位")
     private String pass;
+    private String userSex;
+
 
     public User(String name, int age, String pass) {
         this.name=name;

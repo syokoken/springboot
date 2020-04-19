@@ -1,10 +1,11 @@
 package com.example.demo.web;
 
-import com.example.demo.entity.Message;
+import com.example.demo.model.Message;
 import com.example.demo.repository.MessageRepository;
 import com.example.demo.swagger.BaseResult;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "rest")
 public class MessageController {
+
     @Autowired
+    @Qualifier("messageRepository")
     private MessageRepository messageRepository;
 
     @ApiOperation(

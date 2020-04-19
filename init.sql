@@ -4,5 +4,6 @@ CREATE TABLE `users` (
   `name` varchar(32) DEFAULT NULL COMMENT '用户名',
   `password` varchar(32) DEFAULT NULL COMMENT '密码',
   `age`  int DEFAULT NULL,
+  `sex` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
